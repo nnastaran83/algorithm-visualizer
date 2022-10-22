@@ -1,8 +1,27 @@
-.square-node {
+.node {
+    display: inline-block;
     width: 20px;
     height: 20px;
-    border: 1px solid rgba(12, 146, 249, 0.399);
-    margin: 0;
-    padding: 0;
-
+    border: 1px solid #73aadba0
+   
 }
+
+
+.chevron.right{
+    text-align: center;
+    font-size: larger;
+ 
+}
+
+.circle.outline {
+    text-align: justify;
+    font-size: larger;
+    
+    
+}
+i.icon {
+    display: table;
+    color: rgb(67, 4, 255);
+}
+
+

@@ -2,32 +2,36 @@ import React from "react";
 import Node from "./Node";
 import "../styles/GridBoard.css";
 class GridBoard extends React.Component {
+    state = { rows: 0, columns: 0, gridBoard: null};
     constructor(props) {
         super(props);
         this.Ref = React.createRef();
-        this.setState({ rows: this.props.rows, columns: this.props.columns });
     }
 
-    createRow = () => {
+    componentDidMount(){
+        this.setState({rows: this.props.rows, columns: this.props.columns, gridBoard: this.createGridBoard()});
+    }
+
+    createRow = (colIndex) => {
         const row = [];
         for (let i = 0; i < this.props.columns; i++) {
-            row.push(<Node />);
+            row.push(<Node rowIndex={i} colIndex={colIndex}/>);
         }
-        return row;
+        return row.map((node) => node);
     }
     createGridBoard = () => {
         const gridBoard = [];
         for (let i = 0; i < this.props.rows; i++) {
-            gridBoard.push(<div className="row">{this.createRow()}</div>)
+            gridBoard.push(<div className="row">{this.createRow(i)}</div>)
         }
-        return gridBoard;
+        return gridBoard.map((row) => row);
     }
 
 
     render() {
         return (
             <div id="grid-board" className="ui container" ref={this.Ref}>
-                {this.createGridBoard()}
+                {this.state.gridBoard}
 
             </div>
         );
