@@ -1,0 +1,11 @@
+#grid-board {
+    display: grid;
+    grid-template-columns: 1000px;
+}
+
+
+.row {
+    margin: 0;
+    padding: 0;
+    height: 20px;
+}
