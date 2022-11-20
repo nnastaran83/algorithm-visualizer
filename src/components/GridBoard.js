@@ -5,7 +5,7 @@ class GridBoard extends React.Component {
     state = { rows: 0, columns: 0, gridBoard: null};
     constructor(props) {
         super(props);
-        this.Ref = React.createRef();
+       
     }
 
     componentDidMount(){
